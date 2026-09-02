@@ -1,0 +1,308 @@
+---
+const eventDay = "Sábado";
+const eventDate = "24 · 10 · 2026";
+const eventTime = "7 pm";
+const whatsappMessage = encodeURIComponent(
+  "¡Hola! Confirmo mi asistencia a los XV de Liliana Restrepo Macias."
+);
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#07152f" />
+    <meta name="description" content="Invitación a los XV de Liliana Restrepo Macias" />
+    <title>Mis XV · Liliana Restrepo Macias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="stars" aria-hidden="true"></div>
+        <div class="hero-wash" aria-hidden="true"></div>
+        <div class="moon" aria-hidden="true"></div>
+        <div class="golden-frame" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Una noche bajo las estrellas</p>
+          <p class="hero-kicker">Mis XV</p>
+          <h1 id="hero-title">Liliana</h1>
+          <p class="hero-lastname">Restrepo Macias</p>
+          <p class="hero-date">{eventDay} {eventDate} · {eventTime}</p>
+          <a class="scroll-cue" href="#celebracion" aria-label="Conocer la invitación">↓</a>
+        </div>
+      </section>
+
+      <section class="section light" id="celebracion" aria-labelledby="welcome-title" data-reveal>
+        <div class="narrow">
+          <p class="eyebrow dark">La celebración</p>
+          <h2 id="welcome-title">Hay noches que se quedan para siempre</h2>
+          <p class="copy">Con mucha ilusión quiero compartir contigo una noche mágica, llena de estrellas, música y momentos que guardaremos en el corazón.</p>
+          <p class="signature">Liliana</p>
+          <p class="parents">Con el amor de mis padres<br /><strong>Roberto Restrepo y Zuleima Macias</strong></p>
+        </div>
+      </section>
+
+      <section class="section navy date-section" aria-labelledby="date-title" data-reveal>
+        <div class="stars-subtle" aria-hidden="true"></div>
+        <div class="narrow">
+          <p class="eyebrow">Reserva la fecha</p>
+          <p class="date-day">{eventDay}</p>
+          <h2 id="date-title">{eventDate}</h2>
+          <p class="time">{eventTime}</p>
+          <div class="countdown" aria-label="Cuenta regresiva" data-countdown>
+            <span class="countdown-block"><strong data-days>0</strong><small>días</small></span>
+            <i class="countdown-sep" aria-hidden="true"></i>
+            <span class="countdown-block"><strong data-hours>0</strong><small>horas</small></span>
+            <i class="countdown-sep" aria-hidden="true"></i>
+            <span class="countdown-block"><strong data-minutes>0</strong><small>minutos</small></span>
+            <i class="countdown-sep" aria-hidden="true"></i>
+            <span class="countdown-block"><strong data-seconds>0</strong><small>segundos</small></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section light location-section" aria-labelledby="location-title" data-reveal>
+        <div class="narrow">
+          <p class="eyebrow dark">El lugar</p>
+          <h2 id="location-title">Finca el encanto</h2>
+          <p class="address">Vereda vanguardia<br />Sector Villa Alejandra casa 1</p>
+          <div class="map-placeholder" aria-label="Mapa pendiente de confirmación">
+            <span aria-hidden="true">✦</span>
+            <p>Mapa próximamente</p>
+            <small>La ubicación estará disponible aquí</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section blue details-section" aria-labelledby="details-title" data-reveal>
+        <div class="stars-subtle" aria-hidden="true"></div>
+        <div class="narrow">
+          <p class="eyebrow">Lo que necesitas saber</p>
+          <h2 id="details-title">Detalles</h2>
+          <div class="details-grid">
+            <article><span class="detail-icon" aria-hidden="true">✧</span><h3>Vestimenta</h3><p>Opcional: mujeres azul celeste</p></article>
+            <article><span class="detail-icon" aria-hidden="true">◌</span><h3>Colores reservados</h3><p>Azul noche y dorado</p></article>
+            <article><span class="detail-icon" aria-hidden="true">♡</span><h3>Mesa de regalos</h3><p>Lluvia de sobres</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section navy rsvp-section" aria-labelledby="rsvp-title" data-reveal>
+        <div class="stars-subtle" aria-hidden="true"></div>
+        <div class="narrow">
+          <p class="eyebrow">R.S.V.P.</p>
+          <h2 id="rsvp-title">Tu presencia es mi mejor regalo</h2>
+          <p class="copy">Confirma tu asistencia antes del <strong>18 de octubre</strong>.</p>
+          <a class="gold-button" href={`https://wa.me/573025392359?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">Confirmar por WhatsApp</a>
+          <p class="phone">302 539 2359</p>
+        </div>
+      </section>
+
+      <section class="section light final-section" aria-labelledby="final-title" data-reveal>
+        <div class="narrow">
+          <p class="eyebrow dark">Una noche bajo las estrellas</p>
+          <h2 id="final-title">Nos vemos en la pista</h2>
+          <p class="hashtag">#Mis15Liliana</p>
+          <div class="music-card">
+            <span class="music-note" aria-hidden="true">♫</span>
+            <div><p class="music-label">Música de fondo</p><strong>A Sky Full of Stars</strong><small>Coldplay</small></div>
+            <button type="button" class="music-inline-btn" aria-label="Reproducir música" aria-pressed="false">▶</button>
+          </div>
+          <p class="music-note-copy">La música estará disponible próximamente.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer data-reveal><span>XV</span><p>Liliana Restrepo Macias</p><small>Con cariño, Roberto y Zuleima</small></footer>
+
+    <button class="music-fab" type="button" aria-pressed="false" aria-label="Reproducir música"><span class="music-fab-icon" aria-hidden="true">♪</span><span class="music-fab-label">Música</span></button>
+    <audio id="bg-music" preload="none" loop></audio>
+
+    <script>
+      // countdown
+      const countdown = document.querySelector('[data-countdown]');
+      const target = new Date(2026, 9, 24, 19, 0, 0).getTime();
+      const pad = (value) => String(value).padStart(2, '0');
+      const tick = () => {
+        const distance = Math.max(0, target - Date.now());
+        const values = {
+          days: Math.floor(distance / 86400000),
+          hours: Math.floor((distance / 3600000) % 24),
+          minutes: Math.floor((distance / 60000) % 60),
+          seconds: Math.floor((distance / 1000) % 60),
+        };
+        Object.entries(values).forEach(([key, value]) => {
+          const node = document.querySelector(`[data-${key}]`);
+          if (node) node.textContent = key === 'days' ? String(value) : pad(value);
+        });
+        if (distance === 0 && countdown) countdown.setAttribute('aria-label', 'El gran día ha llegado');
+      };
+      tick();
+      window.setInterval(tick, 1000);
+
+      // reveals suaves — IntersectionObserver
+      (() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
+          return;
+        }
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-visible');
+                obs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+        document.querySelectorAll('[data-reveal]').forEach((el) => obs.observe(el));
+      })();
+
+      // música FAB — toggle decorativo si no hay src, real si hay audio
+      (() => {
+        const fab = document.querySelector('.music-fab');
+        const fabIcon = fab?.querySelector('.music-fab-icon');
+        const fabLabel = fab?.querySelector('.music-fab-label');
+        const inlineBtn = document.querySelector('.music-inline-btn');
+        const audio = document.getElementById('bg-music');
+        const hasSrc = !!(audio && audio.currentSrc || audio.getAttribute('src'));
+        const setState = (playing) => {
+          fab?.setAttribute('aria-pressed', String(playing));
+          fab?.setAttribute('aria-label', playing ? 'Pausar música' : 'Reproducir música');
+          fab?.classList.toggle('is-playing', playing);
+          if (fabIcon) fabIcon.textContent = playing ? '❚❚' : '♪';
+          if (fabLabel) fabLabel.textContent = playing ? 'Pausar' : 'Música';
+          if (inlineBtn) {
+            inlineBtn.setAttribute('aria-pressed', String(playing));
+            inlineBtn.setAttribute('aria-label', playing ? 'Pausar música' : 'Reproducir música');
+            inlineBtn.textContent = playing ? '❚❚' : '▶';
+            inlineBtn.classList.toggle('is-playing', playing);
+          }
+        };
+        const toggle = async () => {
+          const isPlaying = fab?.classList.contains('is-playing');
+          if (!isPlaying && audio && audio.getAttribute('src')) {
+            try { await audio.play(); setState(true); } catch { setState(false); }
+          } else if (isPlaying && audio && !audio.paused) {
+            audio.pause(); setState(false);
+          } else {
+            // sin src — toggle visual decorativo
+            setState(!isPlaying);
+            if (!isPlaying) setTimeout(() => {}, 0);
+          }
+        };
+        fab?.addEventListener('click', toggle);
+        inlineBtn?.addEventListener('click', toggle);
+        if (audio) {
+          audio.addEventListener('ended', () => setState(false));
+          audio.addEventListener('pause', () => {
+            if (!audio.ended) setState(false);
+          });
+        }
+      })();
+    </script>
+
+    <style>
+      :root{--navy:#07152f;--blue:#0d2346;--gold:#e3c36d;--ice:#a9d9f2;--cream:#f6f2e8;--ink:#17233b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--cream);font-family:'DM Sans',sans-serif}a{color:inherit}
+      /* 1. textura papel feTurbulence */
+      body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:10;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+      .hero{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;text-align:center;background:radial-gradient(circle at 50% 18%,#1c4278 0,#0d2346 30%,#07152f 72%)}
+      .stars{position:absolute;inset:0;opacity:.68;z-index:0;pointer-events:none;background:
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 58.3% 67.3% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 21.0% 80.0% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 55.5% 32.5% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 64.2% 57.2% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 18.0% 17.7% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 57.8% 76.7% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 29.8% 76.9% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 16.2% 29.9% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 28.4% 85.8% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 46.0% 80.7% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 10.6% 46.2% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.8px, transparent 1.6px) 68.5% 67.0% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 3.3% 8.9% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 8.2% 67.1% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 67.8% 52.6% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 20.4% 23.5% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 60.8% 27.3% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 82.1% 71.4% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 25.2% 31.1% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 67.8% 25.2% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 82.4% 75.7% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 64.1% 10.9% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 51.4% 52.2% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 72.7% 19.0% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 3.3% 2.2% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.1px, transparent 1.9px) 25.3% 2.1% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 84.0% 3.7% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.9px, transparent 1.7px) 93.9% 41.5% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 8.0% 39.9% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 44.7% 34.7% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 52.3% 40.9% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 37.4% 57.9% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 4.1% 62.0% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 11.3% 16.5% / 3.4px 3.4px no-repeat;animation:twinkle 5.5s ease-in-out infinite alternate}
+      .hero-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,21,47,.08),rgba(7,21,47,.58));z-index:0;pointer-events:none}
+      .stars-subtle{position:absolute;inset:0;opacity:.22;pointer-events:none;z-index:0;background:
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.4px) 12% 20% / 4px 4px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.3px) 78% 32% / 3.6px 3.6px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.8px, transparent 1.4px) 35% 72% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 0.6px, transparent 1.2px) 88% 68% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.5px) 52% 18% / 3.9px 3.9px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.3px) 18% 82% / 3.6px 3.6px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.7px, transparent 1.3px) 65% 48% / 3.6px 3.6px no-repeat,
+    radial-gradient(circle, #fff 0 0.6px, transparent 1.2px) 42% 88% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.4px) 92% 42% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 0.6px, transparent 1.2px) 25% 48% / 3.4px 3.4px no-repeat}
+      .date-section,.details-section,.rsvp-section{position:relative;overflow:hidden}
+      .date-section .narrow,.details-section .narrow,.rsvp-section .narrow{position:relative;z-index:1}
+      .moon{position:absolute;top:12%;right:14%;width:clamp(84px,14vw,160px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fffef0 0%,#fff8d8 45%,#f0e6b8 70%,#e8d9a0 100%);box-shadow:0 0 40px #fff4b855,0 0 80px #fff4b822,inset -8px -4px 12px rgba(0,0,0,.08);overflow:hidden;outline:1px solid #e3c36d55;outline-offset:6px}
+      .moon::before{content:'';position:absolute;width:28%;height:28%;left:22%;top:28%;background:radial-gradient(circle,#e8dcc0 0%,#d4c9a8 60%,transparent 70%);border-radius:50%;opacity:.5;box-shadow:inset 2px 2px 4px rgba(0,0,0,.15)}
+      .moon::after{content:'';position:absolute;width:18%;height:18%;left:58%;top:55%;background:radial-gradient(circle,#e8dcc0 0%,#d4c9a8 62%,transparent 72%);border-radius:50%;opacity:.4;box-shadow:inset 1.5px 1.5px 3px rgba(0,0,0,.12)}
+      /* 3. frame dorado sutil */
+      .golden-frame{position:absolute;inset:clamp(0.5rem,1.8vw,1rem);pointer-events:none;z-index:0;border:1px solid color-mix(in srgb, var(--gold) 85%, transparent)}
+      .golden-frame::before,.golden-frame::after{content:'';position:absolute;width:clamp(28px,6vw,54px);height:clamp(28px,6vw,54px);border-color:var(--gold);border-style:solid}
+      .golden-frame::before{top:-1px;left:-1px;border-width:1.5px 0 0 1.5px}
+      .golden-frame::after{bottom:-1px;right:-1px;border-width:0 1.5px 1.5px 0}
+      .hero-content{position:relative;z-index:1;padding:18vh 24px 8vh;text-align:center;overflow:visible}.eyebrow{margin:0;color:var(--gold);font-size:.72rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase}.hero .eyebrow{margin:1.2rem 0 2.4rem}.hero-kicker{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4.5vw,2.6rem);font-style:italic;color:var(--cream);margin:0 0 2.2rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;opacity:.95}h2{font-family:'Playfair Display',serif;font-weight:400;letter-spacing:-.035em}
+      /* 2. hero editorial — Liliana Parisienne gigante con shine — fix clipping: Parisienne L-loop necesita aire superior */
+      .hero h1{margin:.6rem 0 0;padding:.12em 0 .18em;display:block;overflow:visible;font-family:'Parisienne',cursive;font-weight:400;font-size:clamp(6rem,18vw,13rem);line-height:1.05;letter-spacing:-.02em;background:linear-gradient(110deg,#fff8ef 12%,#e3c36d 35%,#fffdf8 48%,#d8a65f 62%,#fff7e9 80%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:name-shine 4.5s ease-in-out infinite}
+      
+      @keyframes name-shine{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+      h2{margin:18px 0 22px;font-size:clamp(2.6rem,6vw,4.5rem);line-height:1}.hero-lastname{margin:.35rem 0 0;color:var(--ice);font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.22rem);font-style:italic;letter-spacing:.28em}.hero-date{margin:7rem 0 0;color:var(--ice);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase}.scroll-cue{display:block;margin:2.5rem auto 0;width:48px;height:48px;border:1px solid #e3c36d88;border-radius:50%;font-size:1.4rem;line-height:44px;text-decoration:none}.section{padding:clamp(5rem,12vw,10rem) 24px}.narrow{max-width:760px;margin:0 auto}.light{background:var(--cream);color:var(--ink)}.navy{background:var(--navy);color:var(--cream)}.blue{background:var(--blue);color:var(--cream)}.dark{color:#9e7b22}.copy{max-width:620px;font-size:clamp(1rem,2vw,1.15rem);line-height:1.75}.signature{margin:40px 0 4px;color:#866819;font-family:'Parisienne',cursive;font-size:3rem}.parents{line-height:1.7}.parents strong{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400}.date-section{text-align:center}.date-day{margin:0 0 .4rem;color:var(--gold);font-family:'Playfair Display',serif;font-size:clamp(1.15rem,3vw,1.35rem);font-style:italic;letter-spacing:.12em;text-transform:uppercase;display:block;opacity:.95}.time{color:var(--ice);font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic}
+      /* 5. countdown premium */
+      .countdown{display:flex;justify-content:center;align-items:center;gap:clamp(10px,2.5vw,18px);margin-top:4rem;white-space:nowrap}
+      .countdown-block{display:grid;gap:8px;justify-items:center;min-width:0}
+      .countdown strong{color:var(--gold);font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3.6rem);font-weight:400;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+      .countdown small{color:#c8d8ee;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase}
+      .countdown-sep{width:1px;height:clamp(1.2rem,4vw,1.8rem);background:linear-gradient(180deg,transparent,var(--gold) 42%,var(--gold) 58%,transparent);opacity:.6;transform:rotate(14deg);align-self:center;flex-shrink:0}
+      .location-section{text-align:center}.address{font-family:'Playfair Display',serif;font-size:1.25rem;line-height:1.7}
+      /* 4. cards con relieve print */
+      .map-placeholder{margin:3rem auto 0;max-width:520px;padding:42px 24px;border:1px solid #dfc7bd;background:#fffdf8;box-shadow:8px 8px 0 #eee6d4;transform:rotate(.35deg)}
+      .map-placeholder span{color:#b39236;font-size:2rem}.map-placeholder p{margin:12px 0 4px;font-family:'Playfair Display',serif;font-size:1.4rem}.map-placeholder small{color:#6f6a60}.details-section{text-align:center}.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:3.5rem}
+      .details-grid article{min-height:190px;padding:24px 16px;border:1px solid #a9d9f244;background:#12305a;box-shadow:10px 10px 0 #0a1c38}
+      .detail-icon{display:block;color:var(--gold);font-size:2rem}.details-grid h3{margin:16px 0 10px;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400}.details-grid p{margin:0;color:#d5e1ef;font-size:.9rem;line-height:1.6}.rsvp-section{text-align:center}.rsvp-section .copy{margin:0 auto 2rem}.gold-button{display:inline-block;min-height:48px;padding:15px 24px;background:var(--gold);color:var(--navy);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-decoration:none;text-transform:uppercase}.gold-button:hover{background:#f2d98d}.phone{margin-top:20px;color:var(--ice);letter-spacing:.1em}.final-section{text-align:center}.hashtag{color:#866819;font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic}
+      .music-card{display:flex;align-items:center;gap:18px;max-width:520px;margin:3.5rem auto 0;padding:20px;text-align:left;border:1px solid #d6cda9;background:#eee9dc;box-shadow:8px 8px 0 #ddd8c8;transform:rotate(-.3deg)}
+      .music-note{color:#b39236;font-size:2rem}.music-card div{display:grid;gap:3px;flex:1}.music-label,.music-card small{margin:0;color:#777165;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}.music-card strong{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400}
+      .music-card button{width:44px;height:44px;border:1px solid #aaa397;border-radius:50%;background:transparent;color:#817c70;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+      .music-card button:hover,.music-card button:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+      .music-card button.is-playing{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+      .music-note-copy{color:#817c70;font-size:.75rem}footer{padding:64px 24px;text-align:center;background:#040d20}footer span{display:block;color:var(--gold);font-family:'Playfair Display',serif;font-size:3rem}footer p{margin:10px 0;color:#dce7f5;font-family:'Playfair Display',serif;font-style:italic}footer small{color:#91a8c8}
+      /* 7. música FAB */
+      .music-fab{position:fixed;right:1rem;bottom:1rem;z-index:20;display:flex;align-items:center;gap:.5rem;padding:.65rem .9rem;border:1px solid var(--gold);border-radius:999px;background:rgba(255,253,251,.92);color:var(--ink);font:500 .75rem 'DM Sans',sans-serif;letter-spacing:.08em;cursor:pointer;box-shadow:0 8px 20px rgba(7,21,47,.18);transition:background .2s,color .2s,border-color .2s}
+      .music-fab:hover,.music-fab:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+      .music-fab.is-playing{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+      .music-fab:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+      .music-fab-icon{font:1rem 'Playfair Display',serif}
+      /* 6. reveals suaves */
+      [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
+      [data-reveal].is-visible{opacity:1;transform:none}
+      @keyframes twinkle{from{opacity:.45;transform:scale(1)}to{opacity:.9;transform:scale(1.015)}}:focus-visible{outline:2px solid var(--gold);outline-offset:4px}@media(max-width:700px){.hero-content{padding:15vh 24px 6vh}.hero-kicker{margin-bottom:1.35rem}.hero h1{line-height:1.05;padding:.10em 0 .16em;margin-top:.45rem}.moon{top:8%;right:8%;width:78px}.hero-date{margin-top:5rem}.section{padding-block:5.5rem}.details-grid{grid-template-columns:1fr;gap:12px}.details-grid article{min-height:auto;padding:20px;box-shadow:8px 8px 0 #0a1c38;transform:none}.countdown{gap:clamp(8px,2.5vw,14px)}.countdown strong{font-size:clamp(1.35rem,8vw,2.3rem)}.countdown small{font-size:.52rem;letter-spacing:.04em}.countdown-sep{height:clamp(1rem,5vw,1.4rem)}.map-placeholder{transform:none;box-shadow:6px 6px 0 #eee6d4}.music-card{transform:none;box-shadow:6px 6px 0 #ddd8c8}.golden-frame{inset:.45rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stars,.stars-subtle{animation:none}.hero h1{animation:none}[data-reveal]{opacity:1;transform:none;transition:none}[data-reveal].is-visible{opacity:1;transform:none}}
+    </style>
+  </body>
+</html>
