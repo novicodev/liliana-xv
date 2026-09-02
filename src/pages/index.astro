@@ -97,7 +97,6 @@ const whatsappMessage = encodeURIComponent(
           <h2 id="rsvp-title">Tu presencia es mi mejor regalo</h2>
           <p class="copy">Confirma tu asistencia antes del <strong>18 de octubre</strong>.</p>
           <a class="gold-button" href={`https://wa.me/573025392359?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">Confirmar por WhatsApp</a>
-          <p class="phone">302 539 2359</p>
         </div>
       </section>
 
@@ -119,7 +118,7 @@ const whatsappMessage = encodeURIComponent(
     <footer data-reveal><span>XV</span><p>Liliana Restrepo Macias</p><small>Con cariño, Roberto y Zuleima</small></footer>
 
     <button class="music-fab" type="button" aria-pressed="false" aria-label="Reproducir música"><span class="music-fab-icon" aria-hidden="true">♪</span><span class="music-fab-label">Música</span></button>
-    <audio id="bg-music" preload="none" loop></audio>
+    <audio id="bg-music" preload="metadata" loop src="/a-sky-full-of-stars.mp3"></audio>
 
     <script>
       // countdown
