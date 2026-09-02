@@ -21,9 +21,15 @@ const whatsappMessage = encodeURIComponent(
   <body>
     <main>
       <section class="hero" aria-labelledby="hero-title">
+        <!-- Reemplaza /public/hero.jpg (copia de herobackground.jpeg) con foto de Liliana — 960x1280 vertical recomendado -->
+        <div class="hero-photo" aria-hidden="true"></div>
         <div class="stars" aria-hidden="true"></div>
+        <div class="stars-twinkle-2" aria-hidden="true"></div>
         <div class="hero-wash" aria-hidden="true"></div>
         <div class="moon" aria-hidden="true"></div>
+        <div class="moon-secondary" aria-hidden="true"></div>
+        <div class="shooting-star shooting-star--1" aria-hidden="true"></div>
+        <div class="shooting-star shooting-star--2" aria-hidden="true"></div>
         <div class="golden-frame" aria-hidden="true"></div>
         <div class="hero-content">
           <p class="eyebrow">Una noche bajo las estrellas</p>
@@ -36,6 +42,7 @@ const whatsappMessage = encodeURIComponent(
       </section>
 
       <section class="section light" id="celebracion" aria-labelledby="welcome-title" data-reveal>
+        <div class="stars-subtle-light" aria-hidden="true"></div>
         <div class="narrow">
           <p class="eyebrow dark">La celebración</p>
           <h2 id="welcome-title">Hay noches que se quedan para siempre</h2>
@@ -65,15 +72,16 @@ const whatsappMessage = encodeURIComponent(
       </section>
 
       <section class="section light location-section" aria-labelledby="location-title" data-reveal>
+        <div class="stars-subtle-light" aria-hidden="true"></div>
+        <div class="moon-deco moon-deco--location" aria-hidden="true"></div>
         <div class="narrow">
           <p class="eyebrow dark">El lugar</p>
           <h2 id="location-title">Finca el encanto</h2>
           <p class="address">Vereda vanguardia<br />Sector Villa Alejandra casa 1</p>
-          <div class="map-placeholder" aria-label="Mapa pendiente de confirmación">
-            <span aria-hidden="true">✦</span>
-            <p>Mapa próximamente</p>
-            <small>La ubicación estará disponible aquí</small>
+          <div class="location-map">
+            <iframe title="Ubicación Finca el encanto" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7958.46566989155!2d-73.63783796035148!3d4.174577474338004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwMTAnMzIuNiJOIDczwrAzNyczMi4wIlc!5e0!3m2!1ses!2sco!4v1788371835462!5m2!1ses!2sco" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
+          <a class="text-link" href="https://maps.app.goo.gl/E4W9nB8u8osL38Mv8" target="_blank" rel="noreferrer">Cómo llegar <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
@@ -101,6 +109,9 @@ const whatsappMessage = encodeURIComponent(
       </section>
 
       <section class="section light final-section" aria-labelledby="final-title" data-reveal>
+        <div class="stars-subtle-light" aria-hidden="true"></div>
+        <div class="moon-deco moon-deco--final" aria-hidden="true"></div>
+        <div class="constellation-deco" aria-hidden="true"></div>
         <div class="narrow">
           <p class="eyebrow dark">Una noche bajo las estrellas</p>
           <h2 id="final-title">Nos vemos en la pista</h2>
@@ -115,7 +126,7 @@ const whatsappMessage = encodeURIComponent(
       </section>
     </main>
 
-    <footer data-reveal><span>XV</span><p>Liliana Restrepo Macias</p><small>Con cariño, Roberto y Zuleima</small></footer>
+    <footer data-reveal style="position:relative; overflow:hidden;"><div class="stars-subtle" aria-hidden="true"></div><div class="moon-deco moon-deco--footer" aria-hidden="true"></div><span>XV</span><p>Liliana Restrepo Macias</p><small>Con cariño, Roberto y Zuleima</small></footer>
 
     <button class="music-fab" type="button" aria-pressed="false" aria-label="Reproducir música"><span class="music-fab-icon" aria-hidden="true">♪</span><span class="music-fab-label">Música</span></button>
     <audio id="bg-music" preload="metadata" loop src="/a-sky-full-of-stars.mp3"></audio>
@@ -207,62 +218,136 @@ const whatsappMessage = encodeURIComponent(
     </script>
 
     <style>
-      :root{--navy:#07152f;--blue:#0d2346;--gold:#e3c36d;--ice:#a9d9f2;--cream:#f6f2e8;--ink:#17233b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--cream);font-family:'DM Sans',sans-serif}a{color:inherit}
+      :root{--navy:#07152f;--blue:#0d2346;--gold:#e3c36d;--ice:#a9d9f2;--cream:#f6f2e8;--ink:#17233b;--line:#e8ddd0}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--cream);font-family:'DM Sans',sans-serif}a{color:inherit}
       /* 1. textura papel feTurbulence */
       body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:10;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
       .hero{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;text-align:center;background:radial-gradient(circle at 50% 18%,#1c4278 0,#0d2346 30%,#07152f 72%)}
-      .stars{position:absolute;inset:0;opacity:.68;z-index:0;pointer-events:none;background:
-    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 58.3% 67.3% / 3.7px 3.7px no-repeat,
-    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 21.0% 80.0% / 3.4px 3.4px no-repeat,
-    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 55.5% 32.5% / 4.2px 4.2px no-repeat,
-    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 64.2% 57.2% / 3.7px 3.7px no-repeat,
+      /* hero-photo: foto Liliana — usa /hero.jpg y /herobackground.jpeg local, fallback Unsplash noche estrellada */
+      .hero-photo{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:url('/hero.jpg'),url('/herobackground.jpeg'),url('https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?auto=format&fit=crop&w=1600&q=80');background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(.65) brightness(.72);opacity:.55}
+      .stars{position:absolute;inset:0;opacity:.72;z-index:0;pointer-events:none;background:
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 8.2% 6.1% / 4.2px 4.2px no-repeat,
     radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 18.0% 17.7% / 3.8px 3.8px no-repeat,
-    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 57.8% 76.7% / 3.7px 3.7px no-repeat,
-    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 29.8% 76.9% / 3.8px 3.8px no-repeat,
-    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 16.2% 29.9% / 4.2px 4.2px no-repeat,
-    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 28.4% 85.8% / 3.7px 3.7px no-repeat,
-    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 46.0% 80.7% / 3.4px 3.4px no-repeat,
-    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 10.6% 46.2% / 4.2px 4.2px no-repeat,
-    radial-gradient(circle, var(--gold) 0 0.8px, transparent 1.6px) 68.5% 67.0% / 3.4px 3.4px no-repeat,
-    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 3.3% 8.9% / 4.2px 4.2px no-repeat,
-    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 8.2% 67.1% / 3.5px 3.5px no-repeat,
-    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 67.8% 52.6% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 32.5% 9.4% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.1px, transparent 1.9px) 25.3% 2.1% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 44.1% 6.8% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 64.1% 10.9% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 84.0% 3.7% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 3.3% 2.2% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 72.7% 19.0% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 10.6% 14.2% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 48.2% 14.8% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 91.2% 18.5% / 3.7px 3.7px no-repeat,
     radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 20.4% 23.5% / 4.2px 4.2px no-repeat,
-    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 60.8% 27.3% / 3.5px 3.5px no-repeat,
-    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 82.1% 71.4% / 4.2px 4.2px no-repeat,
     radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 25.2% 31.1% / 3.8px 3.8px no-repeat,
     radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 67.8% 25.2% / 3.8px 3.8px no-repeat,
-    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 82.4% 75.7% / 3.7px 3.7px no-repeat,
-    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 64.1% 10.9% / 3.5px 3.5px no-repeat,
-    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 51.4% 52.2% / 3.4px 3.4px no-repeat,
-    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 72.7% 19.0% / 3.8px 3.8px no-repeat,
-    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 3.3% 2.2% / 4.2px 4.2px no-repeat,
-    radial-gradient(circle, var(--gold) 0 1.1px, transparent 1.9px) 25.3% 2.1% / 3.8px 3.8px no-repeat,
-    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 84.0% 3.7% / 3.4px 3.4px no-repeat,
-    radial-gradient(circle, var(--gold) 0 0.9px, transparent 1.7px) 93.9% 41.5% / 3.5px 3.5px no-repeat,
-    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 8.0% 39.9% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 16.2% 29.9% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 55.5% 32.5% / 4.2px 4.2px no-repeat,
     radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 44.7% 34.7% / 4.2px 4.2px no-repeat,
     radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 52.3% 40.9% / 3.7px 3.7px no-repeat,
-    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 37.4% 57.9% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.8px, transparent 1.6px) 93.9% 41.5% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 8.0% 39.9% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 11.3% 16.5% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 60.8% 27.3% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 38.5% 21.2% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 58.3% 38.1% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 51.4% 52.2% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 64.2% 57.2% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 67.8% 52.6% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 46.0% 80.7% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 29.8% 76.9% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 57.8% 76.7% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.9px, transparent 1.7px) 68.5% 67.0% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 8.2% 67.1% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 82.1% 71.4% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 82.4% 75.7% / 3.7px 3.7px no-repeat,
     radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 4.1% 62.0% / 3.8px 3.8px no-repeat,
-    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 11.3% 16.5% / 3.4px 3.4px no-repeat;animation:twinkle 5.5s ease-in-out infinite alternate}
-      .hero-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,21,47,.08),rgba(7,21,47,.58));z-index:0;pointer-events:none}
-      .stars-subtle{position:absolute;inset:0;opacity:.22;pointer-events:none;z-index:0;background:
-    radial-gradient(circle, #fff 0 0.8px, transparent 1.4px) 12% 20% / 4px 4px no-repeat,
-    radial-gradient(circle, #fff 0 0.7px, transparent 1.3px) 78% 32% / 3.6px 3.6px no-repeat,
-    radial-gradient(circle, var(--gold) 0 0.8px, transparent 1.4px) 35% 72% / 3.8px 3.8px no-repeat,
-    radial-gradient(circle, #fff 0 0.6px, transparent 1.2px) 88% 68% / 3.4px 3.4px no-repeat,
-    radial-gradient(circle, #fff 0 0.9px, transparent 1.5px) 52% 18% / 3.9px 3.9px no-repeat,
-    radial-gradient(circle, #fff 0 0.7px, transparent 1.3px) 18% 82% / 3.6px 3.6px no-repeat,
-    radial-gradient(circle, var(--gold) 0 0.7px, transparent 1.3px) 65% 48% / 3.6px 3.6px no-repeat,
-    radial-gradient(circle, #fff 0 0.6px, transparent 1.2px) 42% 88% / 3.4px 3.4px no-repeat,
-    radial-gradient(circle, #fff 0 0.8px, transparent 1.4px) 92% 42% / 3.8px 3.8px no-repeat,
-    radial-gradient(circle, #fff 0 0.6px, transparent 1.2px) 25% 48% / 3.4px 3.4px no-repeat}
-      .date-section,.details-section,.rsvp-section{position:relative;overflow:hidden}
-      .date-section .narrow,.details-section .narrow,.rsvp-section .narrow{position:relative;z-index:1}
-      .moon{position:absolute;top:12%;right:14%;width:clamp(84px,14vw,160px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fffef0 0%,#fff8d8 45%,#f0e6b8 70%,#e8d9a0 100%);box-shadow:0 0 40px #fff4b855,0 0 80px #fff4b822,inset -8px -4px 12px rgba(0,0,0,.08);overflow:hidden;outline:1px solid #e3c36d55;outline-offset:6px}
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 37.4% 57.9% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 21.0% 80.0% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 58.3% 67.3% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 28.4% 85.8% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 15.8% 88.2% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 42.8% 92.1% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.8px, transparent 1.6px) 76.2% 88.5% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 11.3% 16.5% / 3.4px 3.4px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 3.3% 8.9% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.0px, transparent 1.8px) 90.1% 8.2% / 3.7px 3.7px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.35px, transparent 2.15px) 10.6% 46.2% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 38.2% 46.8% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 0.9px, transparent 1.7px) 73.5% 42.1% / 3.5px 3.5px no-repeat,
+    radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 18.0% 17.7% / 3.8px 3.8px no-repeat,
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.6px) 55.1% 62.4% / 3.4px 3.4px no-repeat;animation:twinkle 4.2s ease-in-out infinite alternate}
+      .stars-twinkle-2{position:absolute;inset:0;opacity:.38;z-index:0;pointer-events:none;background:
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 5.5% 38.2% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.7px, transparent 1.4px) 34.2% 18.4% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 78.5% 12.8% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 92.1% 52.3% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 45.8% 28.6% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.7px, transparent 1.4px) 12.8% 72.1% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 88.2% 78.4% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 62.4% 82.1% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 28.5% 52.4% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.7px, transparent 1.4px) 71.2% 5.8% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 18.8% 62.4% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 52.8% 94.1% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 95.2% 28.4% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.7px, transparent 1.4px) 41.2% 71.2% / 3.2px 3.2px no-repeat,
+    radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 3.8% 58.2% / 3.2px 3.2px no-repeat;animation:twinkle2 6.8s ease-in-out infinite alternate;animation-delay:1.8s}
+      .hero-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,21,47,.14),rgba(7,21,47,.62));z-index:0;pointer-events:none}
+      .stars-subtle{position:absolute;inset:0;opacity:.40;pointer-events:none;z-index:0;background:
+    radial-gradient(circle, rgba(255,255,255,.92) 0 1.05px, transparent 1.85px) 12% 20% / 4.5px 4.5px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 0.95px, transparent 1.7px) 78% 32% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.15px, transparent 1.95px) 35% 72% / 4.6px 4.6px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 0.85px, transparent 1.55px) 88% 68% / 4px 4px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 1.08px, transparent 1.85px) 52% 18% / 4.6px 4.6px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 0.95px, transparent 1.7px) 18% 82% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.05px, transparent 1.85px) 65% 48% / 4.5px 4.5px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 0.85px, transparent 1.55px) 42% 88% / 4px 4px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 1.02px, transparent 1.8px) 92% 42% / 4.4px 4.4px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 0.85px, transparent 1.55px) 25% 48% / 4px 4px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 0.95px, transparent 1.7px) 6% 52% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.95px, transparent 1.7px) 58% 8% / 4.4px 4.4px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 1.08px, transparent 1.85px) 74% 78% / 4.6px 4.6px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 0.85px, transparent 1.55px) 45% 42% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.02px, transparent 1.8px) 15% 36% / 4.4px 4.4px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 0.85px, transparent 1.55px) 82% 14% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--gold) 0 1.05px, transparent 1.85px) 8% 12% / 4.5px 4.5px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 0.95px, transparent 1.7px) 48% 62% / 4.3px 4.3px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,.92) 0 0.95px, transparent 1.7px) 68% 22% / 4.3px 4.3px no-repeat,
+    radial-gradient(circle, var(--gold) 0 0.95px, transparent 1.7px) 30% 8% / 4.3px 4.3px no-repeat;animation:twinkle-subtle 5.5s ease-in-out infinite alternate}
+      .stars-subtle-light{position:absolute;inset:0;opacity:.24;pointer-events:none;z-index:0;background:
+    radial-gradient(circle, var(--navy) 0 0.9px, transparent 1.6px) 10% 18% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, var(--navy) 0 0.85px, transparent 1.5px) 82% 24% / 4px 4px no-repeat,
+    radial-gradient(circle, #7a5f1a 0 0.9px, transparent 1.6px) 38% 82% / 4.2px 4.2px no-repeat,
+    radial-gradient(circle, var(--navy) 0 0.8px, transparent 1.45px) 68% 62% / 3.9px 3.9px no-repeat,
+    radial-gradient(circle, var(--navy) 0 0.85px, transparent 1.5px) 22% 68% / 4px 4px no-repeat,
+    radial-gradient(circle, #7a5f1a 0 0.85px, transparent 1.5px) 55% 12% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--navy) 0 0.8px, transparent 1.45px) 90% 48% / 3.9px 3.9px no-repeat,
+    radial-gradient(circle, var(--navy) 0 0.85px, transparent 1.5px) 48% 42% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--navy) 0 0.8px, transparent 1.45px) 15% 42% / 3.9px 3.9px no-repeat,
+    radial-gradient(circle, var(--navy) 0 0.85px, transparent 1.5px) 70% 88% / 4px 4px no-repeat,
+    radial-gradient(circle, #7a5f1a 0 0.85px, transparent 1.5px) 5% 72% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--navy) 0 0.9px, transparent 1.6px) 85% 78% / 4.1px 4.1px no-repeat;animation:twinkle-subtle 6.2s ease-in-out infinite alternate;animation-delay:.6s}
+      .date-section,.details-section,.rsvp-section,
+      #celebracion,.location-section,.final-section{position:relative;overflow:hidden}
+      .date-section .narrow,.details-section .narrow,.rsvp-section .narrow,
+      #celebracion .narrow,.location-section .narrow,.final-section .narrow{position:relative;z-index:1}
+      .moon-deco{position:absolute;pointer-events:none;z-index:0;border-radius:50%;background:radial-gradient(circle at 30% 30%, #fffef0 0%, #fff8d8 42%, #f0e6b8 68%, #e8d9a0 100%);box-shadow:0 0 12px #fff4b822, 0 0 22px #fff4b811}
+      .moon-deco--location{top:18%;right:8%;width:32px;height:32px;opacity:.18;outline:1px solid #e3c36d33;outline-offset:4px}
+      .moon-deco--final{bottom:18%;left:7%;width:28px;height:28px;opacity:.14;outline:1px solid #e3c36d28;outline-offset:3px}
+      .moon-deco--footer{top:14%;right:10%;width:36px;height:36px;opacity:.22;outline:1px solid #e3c36d33;outline-offset:4px}
+      .constellation-deco{position:absolute;top:14%;left:10%;width:72px;height:48px;pointer-events:none;z-index:0;opacity:.10;background:
+        radial-gradient(circle, #9e7b22 0 0.9px, transparent 1.5px) 6px 10px / 12px 12px no-repeat,
+        radial-gradient(circle, var(--navy) 0 0.7px, transparent 1.3px) 28px 4px / 10px 10px no-repeat,
+        radial-gradient(circle, #9e7b22 0 0.7px, transparent 1.3px) 52px 18px / 10px 10px no-repeat,
+        radial-gradient(circle, var(--navy) 0 0.6px, transparent 1.2px) 18px 36px / 9px 9px no-repeat,
+        radial-gradient(circle, #9e7b22 0 0.6px, transparent 1.2px) 48px 42px / 9px 9px no-repeat}
+      .moon{position:absolute;top:12%;right:14%;width:clamp(84px,14vw,160px);aspect-ratio:1;border-radius:50%;z-index:0;pointer-events:none;background:radial-gradient(circle at 30% 30%,#fffef0 0%,#fff8d8 45%,#f0e6b8 70%,#e8d9a0 100%);box-shadow:0 0 40px #fff4b855,0 0 80px #fff4b822,inset -8px -4px 12px rgba(0,0,0,.08);overflow:hidden;outline:1px solid #e3c36d55;outline-offset:6px}
       .moon::before{content:'';position:absolute;width:28%;height:28%;left:22%;top:28%;background:radial-gradient(circle,#e8dcc0 0%,#d4c9a8 60%,transparent 70%);border-radius:50%;opacity:.5;box-shadow:inset 2px 2px 4px rgba(0,0,0,.15)}
       .moon::after{content:'';position:absolute;width:18%;height:18%;left:58%;top:55%;background:radial-gradient(circle,#e8dcc0 0%,#d4c9a8 62%,transparent 72%);border-radius:50%;opacity:.4;box-shadow:inset 1.5px 1.5px 3px rgba(0,0,0,.12)}
+      .moon-secondary{position:absolute;top:68%;left:8%;width:42px;height:42px;border-radius:50%;z-index:0;pointer-events:none;opacity:.32;background:radial-gradient(circle at 32% 32%,#fff8d8 0%,#f0e6b8 55%,#e0cf90 100%);box-shadow:0 0 18px #fff4b844,0 0 36px #fff4b822;outline:1px solid #e3c36d44;outline-offset:4px}
+      .shooting-star{position:absolute;z-index:0;pointer-events:none;width:78px;height:1px;background:linear-gradient(90deg,transparent, var(--gold) 55%, #fff 100%);opacity:0;filter:drop-shadow(0 0 4px var(--gold))}
+      .shooting-star--1{top:18%;left:-10%;transform:rotate(18deg);animation:shooting 9s ease-in infinite}
+      .shooting-star--2{top:42%;left:-10%;transform:rotate(18deg);animation:shooting 12s ease-in infinite;animation-delay:4.2s}
       /* 3. frame dorado sutil */
       .golden-frame{position:absolute;inset:clamp(0.5rem,1.8vw,1rem);pointer-events:none;z-index:0;border:1px solid color-mix(in srgb, var(--gold) 85%, transparent)}
       .golden-frame::before,.golden-frame::after{content:'';position:absolute;width:clamp(28px,6vw,54px);height:clamp(28px,6vw,54px);border-color:var(--gold);border-style:solid}
@@ -270,10 +355,10 @@ const whatsappMessage = encodeURIComponent(
       .golden-frame::after{bottom:-1px;right:-1px;border-width:0 1.5px 1.5px 0}
       .hero-content{position:relative;z-index:1;padding:18vh 24px 8vh;text-align:center;overflow:visible}.eyebrow{margin:0;color:var(--gold);font-size:.72rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase}.hero .eyebrow{margin:1.2rem 0 2.4rem}.hero-kicker{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4.5vw,2.6rem);font-style:italic;color:var(--cream);margin:0 0 2.2rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;opacity:.95}h2{font-family:'Playfair Display',serif;font-weight:400;letter-spacing:-.035em}
       /* 2. hero editorial — Liliana Parisienne gigante con shine — fix clipping: Parisienne L-loop necesita aire superior */
-      .hero h1{margin:.6rem 0 0;padding:.12em 0 .18em;display:block;overflow:visible;font-family:'Parisienne',cursive;font-weight:400;font-size:clamp(6rem,18vw,13rem);line-height:1.05;letter-spacing:-.02em;background:linear-gradient(110deg,#fff8ef 12%,#e3c36d 35%,#fffdf8 48%,#d8a65f 62%,#fff7e9 80%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:name-shine 4.5s ease-in-out infinite}
+       .hero h1{margin:.6rem 0 0;padding:.12em 0 .06em;display:block;overflow:visible;font-family:'Parisienne',cursive;font-weight:400;font-size:clamp(6rem,18vw,13rem);line-height:1.05;letter-spacing:-.02em;background:linear-gradient(110deg,#fff8ef 12%,#e3c36d 35%,#fffdf8 48%,#d8a65f 62%,#fff7e9 80%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:name-shine 4.5s ease-in-out infinite}
       
       @keyframes name-shine{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-      h2{margin:18px 0 22px;font-size:clamp(2.6rem,6vw,4.5rem);line-height:1}.hero-lastname{margin:.35rem 0 0;color:var(--ice);font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.22rem);font-style:italic;letter-spacing:.28em}.hero-date{margin:7rem 0 0;color:var(--ice);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase}.scroll-cue{display:block;margin:2.5rem auto 0;width:48px;height:48px;border:1px solid #e3c36d88;border-radius:50%;font-size:1.4rem;line-height:44px;text-decoration:none}.section{padding:clamp(5rem,12vw,10rem) 24px}.narrow{max-width:760px;margin:0 auto}.light{background:var(--cream);color:var(--ink)}.navy{background:var(--navy);color:var(--cream)}.blue{background:var(--blue);color:var(--cream)}.dark{color:#9e7b22}.copy{max-width:620px;font-size:clamp(1rem,2vw,1.15rem);line-height:1.75}.signature{margin:40px 0 4px;color:#866819;font-family:'Parisienne',cursive;font-size:3rem}.parents{line-height:1.7}.parents strong{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400}.date-section{text-align:center}.date-day{margin:0 0 .4rem;color:var(--gold);font-family:'Playfair Display',serif;font-size:clamp(1.15rem,3vw,1.35rem);font-style:italic;letter-spacing:.12em;text-transform:uppercase;display:block;opacity:.95}.time{color:var(--ice);font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic}
+      h2{margin:18px 0 22px;font-size:clamp(2.6rem,6vw,4.5rem);line-height:1}.hero-lastname{margin:0 0 0;color:var(--ice);font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.22rem);font-style:italic;letter-spacing:.28em}.hero-date{margin:7rem 0 0;color:var(--ice);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase}.scroll-cue{display:block;margin:2.5rem auto 0;width:48px;height:48px;border:1px solid #e3c36d88;border-radius:50%;font-size:1.4rem;line-height:44px;text-decoration:none}.section{padding:clamp(5rem,12vw,10rem) 24px}.narrow{max-width:760px;margin:0 auto}.light{background:var(--cream);color:var(--ink)}.navy{background:var(--navy);color:var(--cream)}.blue{background:var(--blue);color:var(--cream)}.dark{color:#9e7b22}.copy{max-width:620px;font-size:clamp(1rem,2vw,1.15rem);line-height:1.75}.signature{margin:40px 0 4px;color:#866819;font-family:'Parisienne',cursive;font-size:3rem}.parents{line-height:1.7}.parents strong{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400}.date-section{text-align:center}.date-day{margin:0 0 .4rem;color:var(--gold);font-family:'Playfair Display',serif;font-size:clamp(1.15rem,3vw,1.35rem);font-style:italic;letter-spacing:.12em;text-transform:uppercase;display:block;opacity:.95}.time{color:var(--ice);font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic}
       /* 5. countdown premium */
       .countdown{display:flex;justify-content:center;align-items:center;gap:clamp(10px,2.5vw,18px);margin-top:4rem;white-space:nowrap}
       .countdown-block{display:grid;gap:8px;justify-items:center;min-width:0}
@@ -281,9 +366,12 @@ const whatsappMessage = encodeURIComponent(
       .countdown small{color:#c8d8ee;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase}
       .countdown-sep{width:1px;height:clamp(1.2rem,4vw,1.8rem);background:linear-gradient(180deg,transparent,var(--gold) 42%,var(--gold) 58%,transparent);opacity:.6;transform:rotate(14deg);align-self:center;flex-shrink:0}
       .location-section{text-align:center}.address{font-family:'Playfair Display',serif;font-size:1.25rem;line-height:1.7}
-      /* 4. cards con relieve print */
-      .map-placeholder{margin:3rem auto 0;max-width:520px;padding:42px 24px;border:1px solid #dfc7bd;background:#fffdf8;box-shadow:8px 8px 0 #eee6d4;transform:rotate(.35deg)}
-      .map-placeholder span{color:#b39236;font-size:2rem}.map-placeholder p{margin:12px 0 4px;font-family:'Playfair Display',serif;font-size:1.4rem}.map-placeholder small{color:#6f6a60}.details-section{text-align:center}.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:3.5rem}
+      .location-map{position:relative;z-index:1;margin:2.2rem auto 0;max-width:520px;aspect-ratio:1.32;overflow:hidden;border:1px solid color-mix(in srgb, var(--gold) 22%, var(--line));background:var(--cream)}
+      .location-map iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.96) contrast(1.02)}
+      .location-section .text-link{position:relative;z-index:1;display:inline-flex;align-items:center;gap:.35em;margin-top:1.15rem;color:#866819;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid color-mix(in srgb, var(--gold) 55%, transparent)}
+      .location-section .text-link span{font-size:.95em;line-height:1}
+      .location-section .text-link:hover,.location-section .text-link:focus-visible{color:var(--ink);border-bottom-color:var(--gold)}
+      .details-section{text-align:center}.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:3.5rem}
       .details-grid article{min-height:190px;padding:24px 16px;border:1px solid #a9d9f244;background:#12305a;box-shadow:10px 10px 0 #0a1c38}
       .detail-icon{display:block;color:var(--gold);font-size:2rem}.details-grid h3{margin:16px 0 10px;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400}.details-grid p{margin:0;color:#d5e1ef;font-size:.9rem;line-height:1.6}.rsvp-section{text-align:center}.rsvp-section .copy{margin:0 auto 2rem}.gold-button{display:inline-block;min-height:48px;padding:15px 24px;background:var(--gold);color:var(--navy);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-decoration:none;text-transform:uppercase}.gold-button:hover{background:#f2d98d}.phone{margin-top:20px;color:var(--ice);letter-spacing:.1em}.final-section{text-align:center}.hashtag{color:#866819;font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic}
       .music-card{display:flex;align-items:center;gap:18px;max-width:520px;margin:3.5rem auto 0;padding:20px;text-align:left;border:1px solid #d6cda9;background:#eee9dc;box-shadow:8px 8px 0 #ddd8c8;transform:rotate(-.3deg)}
@@ -291,7 +379,7 @@ const whatsappMessage = encodeURIComponent(
       .music-card button{width:44px;height:44px;border:1px solid #aaa397;border-radius:50%;background:transparent;color:#817c70;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
       .music-card button:hover,.music-card button:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--navy)}
       .music-card button.is-playing{background:var(--gold);border-color:var(--gold);color:var(--navy)}
-      .music-note-copy{color:#817c70;font-size:.75rem}footer{padding:64px 24px;text-align:center;background:#040d20}footer span{display:block;color:var(--gold);font-family:'Playfair Display',serif;font-size:3rem}footer p{margin:10px 0;color:#dce7f5;font-family:'Playfair Display',serif;font-style:italic}footer small{color:#91a8c8}
+      .music-note-copy{color:#817c70;font-size:.75rem}footer{position:relative;overflow:hidden;padding:64px 24px;text-align:center;background:#040d20}footer .stars-subtle{opacity:.30}footer .moon-deco--footer{pointer-events:none}footer span,footer p,footer small{position:relative;z-index:1}footer span{display:block;color:var(--gold);font-family:'Playfair Display',serif;font-size:3rem}footer p{margin:10px 0;color:#dce7f5;font-family:'Playfair Display',serif;font-style:italic}footer small{color:#91a8c8}
       /* 7. música FAB */
       .music-fab{position:fixed;right:1rem;bottom:1rem;z-index:20;display:flex;align-items:center;gap:.5rem;padding:.65rem .9rem;border:1px solid var(--gold);border-radius:999px;background:rgba(255,253,251,.92);color:var(--ink);font:500 .75rem 'DM Sans',sans-serif;letter-spacing:.08em;cursor:pointer;box-shadow:0 8px 20px rgba(7,21,47,.18);transition:background .2s,color .2s,border-color .2s}
       .music-fab:hover,.music-fab:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--navy)}
@@ -301,7 +389,7 @@ const whatsappMessage = encodeURIComponent(
       /* 6. reveals suaves */
       [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
       [data-reveal].is-visible{opacity:1;transform:none}
-      @keyframes twinkle{from{opacity:.45;transform:scale(1)}to{opacity:.9;transform:scale(1.015)}}:focus-visible{outline:2px solid var(--gold);outline-offset:4px}@media(max-width:700px){.hero-content{padding:15vh 24px 6vh}.hero-kicker{margin-bottom:1.35rem}.hero h1{line-height:1.05;padding:.10em 0 .16em;margin-top:.45rem}.moon{top:8%;right:8%;width:78px}.hero-date{margin-top:5rem}.section{padding-block:5.5rem}.details-grid{grid-template-columns:1fr;gap:12px}.details-grid article{min-height:auto;padding:20px;box-shadow:8px 8px 0 #0a1c38;transform:none}.countdown{gap:clamp(8px,2.5vw,14px)}.countdown strong{font-size:clamp(1.35rem,8vw,2.3rem)}.countdown small{font-size:.52rem;letter-spacing:.04em}.countdown-sep{height:clamp(1rem,5vw,1.4rem)}.map-placeholder{transform:none;box-shadow:6px 6px 0 #eee6d4}.music-card{transform:none;box-shadow:6px 6px 0 #ddd8c8}.golden-frame{inset:.45rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stars,.stars-subtle{animation:none}.hero h1{animation:none}[data-reveal]{opacity:1;transform:none;transition:none}[data-reveal].is-visible{opacity:1;transform:none}}
+      @keyframes twinkle{0%{opacity:.35;transform:scale(1)}25%{opacity:.90;transform:scale(1.012)}50%{opacity:.48;transform:scale(1)}75%{opacity:.94;transform:scale(1.018)}100%{opacity:.52;transform:scale(1.004)}}@keyframes twinkle2{0%{opacity:.35;transform:scale(1)}30%{opacity:.72;transform:scale(1.01)}60%{opacity:.38;transform:scale(1)}100%{opacity:.58;transform:scale(1.008)}}@keyframes twinkle-subtle{0%{opacity:.38;transform:scale(1)}30%{opacity:.88;transform:scale(1.01)}60%{opacity:.42;transform:scale(1)}100%{opacity:.82;transform:scale(1.008)}}@keyframes shooting{0%{opacity:0;transform:translateX(0) translateY(0) rotate(18deg)}6%{opacity:.95}12%{opacity:0;transform:translateX(118vw) translateY(18vh) rotate(18deg)}100%{opacity:0;transform:translateX(118vw) translateY(18vh) rotate(18deg)}}:focus-visible{outline:2px solid var(--gold);outline-offset:4px}@media(max-width:700px){.hero-content{padding:15vh 24px 6vh}.hero-kicker{margin-bottom:1.35rem}.hero h1{line-height:1.05;padding:.10em 0 .06em;margin-top:.45rem}.hero-lastname{margin-top:0}.moon{top:8%;right:8%;width:78px}.moon-secondary{top:72%;left:6%;width:32px;opacity:.26}.moon-deco--location{top:12%;right:5%;width:26px;height:26px}.moon-deco--final{bottom:12%;left:5%;width:22px;height:22px}.constellation-deco{top:8%;left:4%;opacity:.08}.hero-date{margin-top:5rem}.section{padding-block:5.5rem}.details-grid{grid-template-columns:1fr;gap:12px}.details-grid article{min-height:auto;padding:20px;box-shadow:8px 8px 0 #0a1c38;transform:none}.countdown{gap:clamp(8px,2.5vw,14px)}.countdown strong{font-size:clamp(1.35rem,8vw,2.3rem)}.countdown small{font-size:.52rem;letter-spacing:.04em}.countdown-sep{height:clamp(1rem,5vw,1.4rem)}.location-map{aspect-ratio:.82}.music-card{transform:none;box-shadow:6px 6px 0 #ddd8c8}.golden-frame{inset:.45rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stars,.stars-twinkle-2,.stars-subtle,.stars-subtle-light,.shooting-star{animation:none;opacity:.5}.shooting-star{opacity:0}.hero h1{animation:none}[data-reveal]{opacity:1;transform:none;transition:none}[data-reveal].is-visible{opacity:1;transform:none}}
     </style>
   </body>
 </html>
