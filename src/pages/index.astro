@@ -25,6 +25,7 @@ const whatsappMessage = encodeURIComponent(
         <div class="hero-photo" aria-hidden="true"></div>
         <div class="stars" aria-hidden="true"></div>
         <div class="stars-twinkle-2" aria-hidden="true"></div>
+        <div class="random-stars" aria-hidden="true"></div>
         <div class="hero-wash" aria-hidden="true"></div>
         <div class="moon" aria-hidden="true"></div>
         <div class="moon-secondary" aria-hidden="true"></div>
@@ -104,7 +105,7 @@ const whatsappMessage = encodeURIComponent(
           <p class="eyebrow">R.S.V.P.</p>
           <h2 id="rsvp-title">Tu presencia es mi mejor regalo</h2>
           <p class="copy">Confirma tu asistencia antes del <strong>18 de octubre</strong>.</p>
-          <a class="gold-button" href={`https://wa.me/573025392359?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">Confirmar por WhatsApp</a>
+          <a class="gold-button" href={`https://wa.me/573024392359?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">Confirmar por WhatsApp</a>
         </div>
       </section>
 
@@ -152,6 +153,24 @@ const whatsappMessage = encodeURIComponent(
       };
       tick();
       window.setInterval(tick, 1000);
+
+      // estrellas independientes — cada una titila con ritmo y retraso propios
+      (() => {
+        const field = document.querySelector('.random-stars');
+        if (!field || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const count = 34;
+        for (let index = 0; index < count; index += 1) {
+          const star = document.createElement('span');
+          star.className = 'random-star';
+          star.style.setProperty('--x', `${Math.random() * 100}%`);
+          star.style.setProperty('--y', `${Math.random() * 100}%`);
+          star.style.setProperty('--size', `${Math.random() * 2.2 + 1}px`);
+          star.style.setProperty('--duration', `${Math.random() * 3.5 + 2.8}s`);
+          star.style.setProperty('--delay', `${Math.random() * -6}s`);
+          star.style.setProperty('--peak', `${Math.random() * 0.55 + 0.35}`);
+          field.appendChild(star);
+        }
+      })();
 
       // reveals suaves — IntersectionObserver
       (() => {
@@ -218,12 +237,12 @@ const whatsappMessage = encodeURIComponent(
     </script>
 
     <style>
-      :root{--navy:#07152f;--blue:#0d2346;--gold:#e3c36d;--ice:#a9d9f2;--cream:#f6f2e8;--ink:#17233b;--line:#e8ddd0}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--cream);font-family:'DM Sans',sans-serif}a{color:inherit}
+      :root{--navy:#10284b;--blue:#244e78;--gold:#d8b862;--ice:#c7e9f5;--cream:#fbf6ec;--ink:#17233b;--line:#e8ddd0}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--cream);font-family:'DM Sans',sans-serif}a{color:inherit}
       /* 1. textura papel feTurbulence */
       body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:10;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
-      .hero{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;text-align:center;background:radial-gradient(circle at 50% 18%,#1c4278 0,#0d2346 30%,#07152f 72%)}
+      .hero{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;text-align:center;background:radial-gradient(circle at 50% 18%,#376b9c 0,#244e78 32%,#10284b 76%)}
       /* hero-photo: foto Liliana — usa /hero.jpg y /herobackground.jpeg local, fallback Unsplash noche estrellada */
-      .hero-photo{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:url('/hero.jpg'),url('/herobackground.jpeg'),url('https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?auto=format&fit=crop&w=1600&q=80');background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(.65) brightness(.72);opacity:.55}
+      .hero-photo{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:url('/hero.jpg'),url('/herobackground.jpeg'),url('https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?auto=format&fit=crop&w=1600&q=80');background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(.78) brightness(.94);opacity:.78}
       .stars{position:absolute;inset:0;opacity:.72;z-index:0;pointer-events:none;background:
     radial-gradient(circle, #fff 0 1.35px, transparent 2.15px) 8.2% 6.1% / 4.2px 4.2px no-repeat,
     radial-gradient(circle, #fff 0 1.1px, transparent 1.9px) 18.0% 17.7% / 3.8px 3.8px no-repeat,
@@ -292,7 +311,9 @@ const whatsappMessage = encodeURIComponent(
     radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 95.2% 28.4% / 3.2px 3.2px no-repeat,
     radial-gradient(circle, var(--gold) 0 0.7px, transparent 1.4px) 41.2% 71.2% / 3.2px 3.2px no-repeat,
     radial-gradient(circle, #fff 0 0.7px, transparent 1.4px) 3.8% 58.2% / 3.2px 3.2px no-repeat;animation:twinkle2 6.8s ease-in-out infinite alternate;animation-delay:1.8s}
-      .hero-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,21,47,.14),rgba(7,21,47,.62));z-index:0;pointer-events:none}
+      .hero-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,40,75,.08),rgba(16,40,75,.28));z-index:0;pointer-events:none}
+      .random-stars{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+      .random-star{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:var(--size);border-radius:50%;background:#fffdf2;box-shadow:0 0 5px #fff8d888;opacity:.15;animation:random-twinkle var(--duration) ease-in-out var(--delay) infinite alternate}
       .stars-subtle{position:absolute;inset:0;opacity:.40;pointer-events:none;z-index:0;background:
     radial-gradient(circle, rgba(255,255,255,.92) 0 1.05px, transparent 1.85px) 12% 20% / 4.5px 4.5px no-repeat,
     radial-gradient(circle, rgba(255,255,255,.92) 0 0.95px, transparent 1.7px) 78% 32% / 4.2px 4.2px no-repeat,
@@ -372,14 +393,14 @@ const whatsappMessage = encodeURIComponent(
       .location-section .text-link span{font-size:.95em;line-height:1}
       .location-section .text-link:hover,.location-section .text-link:focus-visible{color:var(--ink);border-bottom-color:var(--gold)}
       .details-section{text-align:center}.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:3.5rem}
-      .details-grid article{min-height:190px;padding:24px 16px;border:1px solid #a9d9f244;background:#12305a;box-shadow:10px 10px 0 #0a1c38}
+      .details-grid article{min-height:190px;padding:24px 16px;border:1px solid #c7e9f555;background:#2c5a84;box-shadow:10px 10px 0 #173654}
       .detail-icon{display:block;color:var(--gold);font-size:2rem}.details-grid h3{margin:16px 0 10px;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400}.details-grid p{margin:0;color:#d5e1ef;font-size:.9rem;line-height:1.6}.rsvp-section{text-align:center}.rsvp-section .copy{margin:0 auto 2rem}.gold-button{display:inline-block;min-height:48px;padding:15px 24px;background:var(--gold);color:var(--navy);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-decoration:none;text-transform:uppercase}.gold-button:hover{background:#f2d98d}.phone{margin-top:20px;color:var(--ice);letter-spacing:.1em}.final-section{text-align:center}.hashtag{color:#866819;font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic}
       .music-card{display:flex;align-items:center;gap:18px;max-width:520px;margin:3.5rem auto 0;padding:20px;text-align:left;border:1px solid #d6cda9;background:#eee9dc;box-shadow:8px 8px 0 #ddd8c8;transform:rotate(-.3deg)}
       .music-note{color:#b39236;font-size:2rem}.music-card div{display:grid;gap:3px;flex:1}.music-label,.music-card small{margin:0;color:#777165;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}.music-card strong{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400}
       .music-card button{width:44px;height:44px;border:1px solid #aaa397;border-radius:50%;background:transparent;color:#817c70;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
       .music-card button:hover,.music-card button:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--navy)}
       .music-card button.is-playing{background:var(--gold);border-color:var(--gold);color:var(--navy)}
-      .music-note-copy{color:#817c70;font-size:.75rem}footer{position:relative;overflow:hidden;padding:64px 24px;text-align:center;background:#040d20}footer .stars-subtle{opacity:.30}footer .moon-deco--footer{pointer-events:none}footer span,footer p,footer small{position:relative;z-index:1}footer span{display:block;color:var(--gold);font-family:'Playfair Display',serif;font-size:3rem}footer p{margin:10px 0;color:#dce7f5;font-family:'Playfair Display',serif;font-style:italic}footer small{color:#91a8c8}
+      .music-note-copy{color:#817c70;font-size:.75rem}footer{position:relative;overflow:hidden;padding:64px 24px;text-align:center;background:#0b1a34}footer .stars-subtle{opacity:.30}footer .moon-deco--footer{pointer-events:none}footer span,footer p,footer small{position:relative;z-index:1}footer span{display:block;color:var(--gold);font-family:'Playfair Display',serif;font-size:3rem}footer p{margin:10px 0;color:#dce7f5;font-family:'Playfair Display',serif;font-style:italic}footer small{color:#91a8c8}
       /* 7. música FAB */
       .music-fab{position:fixed;right:1rem;bottom:1rem;z-index:20;display:flex;align-items:center;gap:.5rem;padding:.65rem .9rem;border:1px solid var(--gold);border-radius:999px;background:rgba(255,253,251,.92);color:var(--ink);font:500 .75rem 'DM Sans',sans-serif;letter-spacing:.08em;cursor:pointer;box-shadow:0 8px 20px rgba(7,21,47,.18);transition:background .2s,color .2s,border-color .2s}
       .music-fab:hover,.music-fab:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--navy)}
@@ -389,7 +410,7 @@ const whatsappMessage = encodeURIComponent(
       /* 6. reveals suaves */
       [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
       [data-reveal].is-visible{opacity:1;transform:none}
-      @keyframes twinkle{0%{opacity:.35;transform:scale(1)}25%{opacity:.90;transform:scale(1.012)}50%{opacity:.48;transform:scale(1)}75%{opacity:.94;transform:scale(1.018)}100%{opacity:.52;transform:scale(1.004)}}@keyframes twinkle2{0%{opacity:.35;transform:scale(1)}30%{opacity:.72;transform:scale(1.01)}60%{opacity:.38;transform:scale(1)}100%{opacity:.58;transform:scale(1.008)}}@keyframes twinkle-subtle{0%{opacity:.38;transform:scale(1)}30%{opacity:.88;transform:scale(1.01)}60%{opacity:.42;transform:scale(1)}100%{opacity:.82;transform:scale(1.008)}}@keyframes shooting{0%{opacity:0;transform:translateX(0) translateY(0) rotate(18deg)}6%{opacity:.95}12%{opacity:0;transform:translateX(118vw) translateY(18vh) rotate(18deg)}100%{opacity:0;transform:translateX(118vw) translateY(18vh) rotate(18deg)}}:focus-visible{outline:2px solid var(--gold);outline-offset:4px}@media(max-width:700px){.hero-content{padding:15vh 24px 6vh}.hero-kicker{margin-bottom:1.35rem}.hero h1{line-height:1.05;padding:.10em 0 .06em;margin-top:.45rem}.hero-lastname{margin-top:0}.moon{top:8%;right:8%;width:78px}.moon-secondary{top:72%;left:6%;width:32px;opacity:.26}.moon-deco--location{top:12%;right:5%;width:26px;height:26px}.moon-deco--final{bottom:12%;left:5%;width:22px;height:22px}.constellation-deco{top:8%;left:4%;opacity:.08}.hero-date{margin-top:5rem}.section{padding-block:5.5rem}.details-grid{grid-template-columns:1fr;gap:12px}.details-grid article{min-height:auto;padding:20px;box-shadow:8px 8px 0 #0a1c38;transform:none}.countdown{gap:clamp(8px,2.5vw,14px)}.countdown strong{font-size:clamp(1.35rem,8vw,2.3rem)}.countdown small{font-size:.52rem;letter-spacing:.04em}.countdown-sep{height:clamp(1rem,5vw,1.4rem)}.location-map{aspect-ratio:.82}.music-card{transform:none;box-shadow:6px 6px 0 #ddd8c8}.golden-frame{inset:.45rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stars,.stars-twinkle-2,.stars-subtle,.stars-subtle-light,.shooting-star{animation:none;opacity:.5}.shooting-star{opacity:0}.hero h1{animation:none}[data-reveal]{opacity:1;transform:none;transition:none}[data-reveal].is-visible{opacity:1;transform:none}}
+      @keyframes twinkle{0%{opacity:.35;transform:scale(1)}25%{opacity:.90;transform:scale(1.012)}50%{opacity:.48;transform:scale(1)}75%{opacity:.94;transform:scale(1.018)}100%{opacity:.52;transform:scale(1.004)}}@keyframes twinkle2{0%{opacity:.35;transform:scale(1)}30%{opacity:.72;transform:scale(1.01)}60%{opacity:.38;transform:scale(1)}100%{opacity:.58;transform:scale(1.008)}}@keyframes twinkle-subtle{0%{opacity:.38;transform:scale(1)}30%{opacity:.88;transform:scale(1.01)}60%{opacity:.42;transform:scale(1)}100%{opacity:.82;transform:scale(1.008)}}@keyframes random-twinkle{0%{opacity:.08;transform:scale(.65)}45%{opacity:var(--peak);transform:scale(1.35)}100%{opacity:.12;transform:scale(.8)}}@keyframes shooting{0%{opacity:0;transform:translateX(0) translateY(0) rotate(18deg)}6%{opacity:.95}12%{opacity:0;transform:translateX(118vw) translateY(18vh) rotate(18deg)}100%{opacity:0;transform:translateX(118vw) translateY(18vh) rotate(18deg)}}:focus-visible{outline:2px solid var(--gold);outline-offset:4px}@media(max-width:700px){.hero-content{padding:15vh 24px 6vh}.hero-kicker{margin-bottom:1.35rem}.hero h1{line-height:1.05;padding:.10em 0 .06em;margin-top:.45rem}.hero-lastname{margin-top:0}.hero-lastname{margin-top:0}.moon{top:8%;right:8%;width:78px}.moon-secondary{top:72%;left:6%;width:32px;opacity:.26}.moon-deco--location{top:12%;right:5%;width:26px;height:26px}.moon-deco--final{bottom:12%;left:5%;width:22px;height:22px}.constellation-deco{top:8%;left:4%;opacity:.08}.hero-date{margin-top:5rem}.section{padding-block:5.5rem}.details-grid{grid-template-columns:1fr;gap:12px}.details-grid article{min-height:auto;padding:20px;box-shadow:8px 8px 0 #173654;transform:none}.countdown{gap:clamp(8px,2.5vw,14px)}.countdown strong{font-size:clamp(1.35rem,8vw,2.3rem)}.countdown small{font-size:.52rem;letter-spacing:.04em}.countdown-sep{height:clamp(1rem,5vw,1.4rem)}.location-map{aspect-ratio:.82}.music-card{transform:none;box-shadow:6px 6px 0 #ddd8c8}.golden-frame{inset:.45rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stars,.stars-twinkle-2,.stars-subtle,.stars-subtle-light,.shooting-star{animation:none;opacity:.5}.shooting-star{opacity:0}.random-stars{display:none}.hero h1{animation:none}[data-reveal]{opacity:1;transform:none;transition:none}[data-reveal].is-visible{opacity:1;transform:none}}
     </style>
   </body>
 </html>
